@@ -11,9 +11,17 @@
 - AWS CDK (Infrastructure as Code)
 - Serverless (Lambda, API Gateway, DynamoDB 等)
 - pnpm (パッケージマネージャー)
+- Terraform (OIDC設定)
+
+## CI/CD
+- GitHub Actions を使用する
 
 ## テスト
 - Vitest (ユニットテストフレームワーク)
+- ユニットテストのカバレッジは条件網羅（Branch Coverage）で85%以上とする
+
+## Linter
+- [Biome](https://biomejs.dev/) を使用する
 
 ## コーディング規約
 - [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html) に準拠

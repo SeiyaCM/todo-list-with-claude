@@ -1,0 +1,48 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read|Edit|Write|Grep",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/block-sensitive-files.mjs",
+            "timeout": 10,
+            "statusMessage": "Checking for sensitive file access..."
+          }
+        ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -Command \"if(!(Test-Path './hook-logs')){New-Item -ItemType Directory -Path './hook-logs' | Out-Null}; $input | Set-Content -Path './hook-logs/pre-log.json' -Encoding UTF8\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/tsc-check.mjs",
+            "timeout": 30,
+            "statusMessage": "Running TypeScript type check..."
+          }
+        ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -Command \"if(!(Test-Path './hook-logs')){New-Item -ItemType Directory -Path './hook-logs' | Out-Null}; $input | Set-Content -Path './hook-logs/post-log.json' -Encoding UTF8\""
+          }
+        ]
+      }
+    ]
+  }
+}
