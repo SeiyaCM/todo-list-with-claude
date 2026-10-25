@@ -7,11 +7,11 @@
 - TypeScript
 - [React](https://github.com/facebook/react)
 - [Hono](https://github.com/honojs/hono)
-- AWS (サーバーレスアーキテクチャ)
-- AWS CDK (Infrastructure as Code)
-- Serverless (Lambda, API Gateway, DynamoDB 等)
+- Azure (サーバーレスアーキテクチャ)
+- Bicep (Infrastructure as Code)
+- Serverless (Azure Functions, Azure API Management, Azure Cosmos DB, Azure Static Web Apps 等)
 - pnpm (パッケージマネージャー)
-- Terraform (OIDC設定)
+- Terraform (OIDC設定: GitHub Actions 用の Microsoft Entra ID フェデレーション資格情報)
 
 ## CI/CD
 - GitHub Actions を使用する
