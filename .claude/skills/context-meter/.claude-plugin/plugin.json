@@ -1,0 +1,6 @@
+{
+  "name": "context-meter",
+  "version": "0.1.0",
+  "description": "入力欄の上にコンテキストウィンドウの使用量をバーで表示する",
+  "types": "./types/index.d.ts"
+}
